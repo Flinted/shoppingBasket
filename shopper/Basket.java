@@ -30,6 +30,10 @@ public class Basket{
     }
   }
 
+  public void emptyBasket(){
+    items.clear();
+  }
+
   public HashMap<String,Counter> getItems(){
     return items;
   }

@@ -40,6 +40,15 @@ public class BasketTest{
     }
 
     @Test
+    public void canEmptyBasket(){
+      basket.addToBasket(item);
+      basket.addToBasket(item);
+      basket.emptyBasket();
+      assertEquals(0,basket.countBasket());
+    }
+
+
+    @Test
     public void shouldBeAbleToRemoveItems(){
       basket.addToBasket(item);
       basket.addToBasket(item);
