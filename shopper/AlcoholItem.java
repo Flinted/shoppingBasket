@@ -1,7 +1,7 @@
 package shopper;
 import interfaces.*;
 
-public class AlcoholItem extends Item implements Shoppable{
+public class AlcoholItem extends Item{
   
   public AlcoholItem(String name, double price, boolean discountable){
       super(name,price,discountable);

@@ -2,7 +2,7 @@ package shopper;
 import java.util.*;
 import interfaces.*;
 
-public class MediaItem extends Item implements Shoppable{
+public class MediaItem extends Item{
   private int review;
 
   public MediaItem(String name, double price, boolean discountable){
