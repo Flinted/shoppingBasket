@@ -1,9 +1,9 @@
 package shopper;
 import java.util.*;
 import java.text.*;
+import interfaces.*;
 
-
-public abstract class Item{
+public abstract class Item implements Shoppable{
   private String name;
   private double price;
   private boolean discountable;
@@ -12,6 +12,10 @@ public abstract class Item{
     this.name = name;
     this.price = price;
     this.discountable = discountable;
+  }
+
+  public String getName(){
+    return this.name;
   }
 
   public double getPrice(){

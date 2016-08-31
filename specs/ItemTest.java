@@ -40,4 +40,31 @@ public class ItemTest{
     item2.toggleDiscountable();
     assertEquals(false, item.getDiscountable());
   }
+
+  @Test
+  public void mediaItemsAreReviewable(){
+    MediaItem mediaItem  = (MediaItem) item2;
+    mediaItem.review(8);
+    assertEquals(8,mediaItem.getReview());
+  }
+
+  @Test
+  public void mediaItemsAreNotReviewableOver10(){
+    MediaItem mediaItem  = (MediaItem) item2;
+    mediaItem.review(10);
+    mediaItem.review(15);
+    assertEquals(10,mediaItem.getReview());
+  }
+
+  @Test
+  public void alcoholItemsPassAgeCheckWith19(){
+    AlcoholItem alcohol = (AlcoholItem) item3;
+    assertEquals(true,alcohol.ageCheck(19));
+  }
+
+  @Test
+  public void alcoholItemsFailAgeCheckWith16(){
+    AlcoholItem alcohol = (AlcoholItem) item3;
+    assertEquals(false,alcohol.ageCheck(16));
+  }
 }
