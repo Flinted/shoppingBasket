@@ -44,7 +44,18 @@ public class Discounter{
   public void checkBOGOF(HashMap<String,Counter> items){
     double bogofDiscount = 0.00;
     for(Counter item : items.values()){
-      bogofDiscount += item.calculateBOGOF();
+      double price = item.getPrice();
+      int count = item.getCount();
+      double itemDiscount = 0.00;
+      if(!item.getTemplate().getDiscountable()){
+        System.out.println("Hit");
+        itemDiscount = 0.00;
+      }else if(count % 2 == 1){
+        itemDiscount = price * ((count-1)/2);
+      }else{
+        itemDiscount = price * count/2;
+      }
+      bogofDiscount += itemDiscount;
     }
     discount = bogofDiscount;
   }
